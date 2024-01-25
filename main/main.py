@@ -1,5 +1,5 @@
 from src.classes import DBManager
-from src.utils import get_list_company, get_list_vacancy, refactoring_vacancy, script_cmp
+from src.utils import get_list_company, get_list_vacancy, refactoring_vacancy, script_work_bd
 
 count_company = {
     "сбербанк": "3529",
@@ -41,4 +41,4 @@ if __name__ == "__main__":
             "5 - Получить все вакансии у которых зп выше среднего\n"
             "6 - Передать слова которые должны содержаться в имени вакансии\n"
         )
-        script_cmp(input("Введите число - "))
+        script_work_bd(input("Введите число - "))

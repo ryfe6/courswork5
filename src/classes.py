@@ -35,7 +35,7 @@ class DBManager:
                 with self.conn.cursor() as cur:
                     cur.execute("DROP TABLE IF EXISTS vacancy;" "DROP TABLE IF EXISTS company;"),
 
-                with self.conn.cursor() as cur:
+
                     cur.execute(
                         """CREATE TABLE company(
                                        id INTEGER PRIMARY KEY NOT NULL,
@@ -46,7 +46,6 @@ class DBManager:
                                        site_url varchar(200) NOT NULL)"""
                     ),
 
-                with self.conn.cursor() as cur:
                     cur.execute(
                         """CREATE TABLE vacancy(
                                        id INTEGER,
@@ -60,7 +59,6 @@ class DBManager:
                                        employer_id INTEGER REFERENCES company(id) NOT NULL)"""
                     ),
 
-                with self.conn.cursor() as cur:
                     for company in company_data:
                         cur.execute(
                             "INSERT INTO company VALUES (%s, %s, %s, %s, %s, %s)",
@@ -74,7 +72,6 @@ class DBManager:
                             ),
                         ),
 
-                with self.conn.cursor() as cur:
                     for vacancy in ref_vacancy_data:
                         cur.execute(
                             "INSERT INTO vacancy VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
